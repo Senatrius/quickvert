@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Unit Conversion (Custom)",
+  "version": "1.0",
+  "description": "Convert units quickly with custom presets stored securely.",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/conversions.js", "scripts/content.js"]
+    }
+  ]
+}
